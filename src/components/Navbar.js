@@ -8,7 +8,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText
+  NavbarText,
+  Container
 } from 'reactstrap';
 import { auth } from "../firebase";
 
@@ -21,23 +22,25 @@ const NavbarComponent = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Simple Inventory</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Category</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">Product</NavLink>
-            </NavItem>
-          </Nav>
-          <NavbarText onClick = {() => {
-                auth.signOut();
-                localStorage.removeItem('user');
-                history.push('/login')
-              }}>Logout</NavbarText>
-        </Collapse>
+        <Container>
+            <NavbarBrand href="/">Simple Inventory</NavbarBrand>
+            <NavbarToggler onClick={toggle} />
+            <Collapse isOpen={isOpen} navbar>
+                <Nav className="mr-auto" navbar>
+                    <NavItem>
+                        <NavLink href="/category/">Category</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/product/">Product</NavLink>
+                    </NavItem>
+                </Nav>
+                <NavbarText onClick = {() => {
+                    auth.signOut();
+                    localStorage.removeItem('user');
+                    history.push('/login')
+                }}>Logout</NavbarText>
+            </Collapse>
+        </Container>
       </Navbar>
     </div>
   );
