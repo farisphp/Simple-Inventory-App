@@ -3,13 +3,13 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaXXXXXXXXXXXXXXXXXXXXXXX',
-  authDomain: 'test-XXXX.firebaseapp.com',
-  databaseURL: 'https://test-XXXXXX.firebaseio.com',
-  projectId: 'test-XXXX',
-  storageBucket: 'test-XXXX.appspot.com',
-  messagingSenderId: 'XXXXXXX',
-  appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    apiKey: "AIzaSyBNHr_OfySN5qMOS3pVQ4IIgbuPvlqu_1s",
+    authDomain: "simple-inventory-ee733.firebaseapp.com",
+    databaseURL: "https://simple-inventory-ee733.firebaseio.com",
+    projectId: "simple-inventory-ee733",
+    storageBucket: "simple-inventory-ee733.appspot.com",
+    messagingSenderId: "834606914926",
+    appId: "1:834606914926:web:f567360d8f8b4184bb757f"
 };
 
 firebase.initializeApp(firebaseConfig);

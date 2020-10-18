@@ -1,0 +1,13 @@
+@media all and (min-width: 480px) {
+    .login-container {
+      max-width: 320px;
+    }
+}
+
+.login-container {
+    margin: 32px auto;
+}
+
+.login-container h2{
+    text-align: center;
+}
