@@ -34,9 +34,9 @@ const NavbarComponent = (props) => {
                         <NavLink href="/product/">Product</NavLink>
                     </NavItem>
                 </Nav>
-                <NavbarText onClick = {() => {
+                <NavbarText style={{cursor: "pointer"}} onClick = {() => {
                     auth.signOut();
-                    localStorage.removeItem('user');
+                    localStorage.clear();
                     history.push('/login')
                 }}>Logout</NavbarText>
             </Collapse>

@@ -20,7 +20,16 @@ class ListCategory extends Component {
     }
 
     componentDidMount(){
-        this.getCategories();
+        console.log("is online", navigator.onLine)
+        if (navigator.onLine){
+            this.getCategories();
+        }else{
+            let categories = localStorage.getItem('categories');
+            this.setState({
+                categories: categories
+            })
+        }
+        
     }
 
     getCategories(){

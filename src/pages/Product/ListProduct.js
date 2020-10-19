@@ -23,8 +23,18 @@ class ListProduct extends Component {
     }
 
     componentDidMount(){
-        this.getCategories();
-        this.getProducts();
+        if (navigator.onLine){
+            this.getCategories();
+            this.getProducts();
+        }else{
+            let categories = localStorage.getItem('categories');
+            let products = localStorage.getItem('products');
+            this.setState({
+                categories: categories,
+                products: products
+            })
+        }
+        
     }
 
     getCategories(){
