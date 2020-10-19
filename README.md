@@ -6,9 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## How To Install
 
 In the project directory, run:
-### 1. `yarn install`
+### 1. `Initialize our Firebase app using the configuration details we got from Firebase Console`
+Firebase Configuration settings located at src/firebase.js
+### 2. `yarn install`
 
-### 2. `yarn start`
+### 3. `yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
