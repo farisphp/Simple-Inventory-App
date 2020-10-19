@@ -31,7 +31,7 @@ class AddCategory extends Component {
         CategoryDataService.create(data)
         .then(() => {
             console.log("Created new item successfully!");
-            this.props.history.push("/");
+            this.props.history.push("/category/");
         })
         .catch((e) => {
             console.log(e);
@@ -48,7 +48,7 @@ class AddCategory extends Component {
                 <div>
                     <Navbar />
                     <Container>
-                        <h2>Add Category</h2>
+                        <h2>Edit Category</h2>
                         <Form className="form">
                             <FormGroup>
                                 <Label>Category Name</Label>
