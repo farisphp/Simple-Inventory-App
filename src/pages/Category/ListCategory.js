@@ -87,7 +87,12 @@ class ListCategory extends Component {
                                         <th scope="row">{cat.order}</th>
                                         <td>{cat.categoryName}</td>
                                         <td>
-                                            <Link to={"/category/"+cat.id}>
+                                            <Link to={{
+                                                pathname: '/category/'+cat.id,
+                                                state: {
+                                                  category: cat
+                                                }
+                                            }}>
                                                 <Button color="primary">Update</Button>{' '}
                                             </Link>
                                             <Button color="danger" onClick={this.deleteCategory.bind(this,cat.id )}>Delete</Button>{' '}

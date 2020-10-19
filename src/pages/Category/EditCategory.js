@@ -21,20 +21,10 @@ class EditCategory extends Component {
     }
 
     componentDidMount(){
-        this.getCategory(this.state.categoryId);
-    }
-
-    getCategory(id){
-        CategoryDataService.getById(id)
-        .then((res) => {
-            console.log("Response get category", res.data());
-            this.setState({
-                categoryName: res.data().categoryName
-            })
+        const { category } = this.props.location.state;
+        this.setState({
+            categoryName: category.categoryName
         })
-        .catch((e) => {
-            console.log(e);
-        });
     }
 
     handleChange(event) {
