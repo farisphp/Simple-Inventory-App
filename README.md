@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Admin Credentials
+Email: admin@admin.com
+Password: admin123
+
 ## Apps URL
 [https://simple-inventory-ee733.web.app/](https://simple-inventory-ee733.web.app/)
 
