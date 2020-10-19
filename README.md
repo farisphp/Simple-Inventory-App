@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Apps URL
+[https://simple-inventory-ee733.web.app/](https://simple-inventory-ee733.web.app/)
+
 ## How To Install
 
 In the project directory, run:
