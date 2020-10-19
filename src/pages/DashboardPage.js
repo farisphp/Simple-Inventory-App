@@ -9,18 +9,21 @@ import ProductDataService from "../services/ProductService";
 class DashboardPage extends Component {
     constructor(props){
         super(props);
+        console.log("User constructor", JSON.parse(localStorage.getItem('user')));
         this.CategoriesData = this.CategoriesData.bind(this);
         this.ProductsData = this.ProductsData.bind(this);
         this.state = {
-            user: localStorage.getItem('user'),
-            categories: [],
-            products: []
+            user: JSON.parse(localStorage.getItem('user')),
+            categories: JSON.parse(localStorage.getItem('categories')),
+            products: JSON.parse(localStorage.getItem('products'))
         }
     }
 
     componentDidMount(){
-        this.getCategories();
-        this.getProducts();
+        if (navigator.onLine){
+            this.getCategories();
+            this.getProducts();
+        }
     }
 
     getProducts(){
@@ -54,7 +57,7 @@ class DashboardPage extends Component {
         this.setState({
             products: products,
         });
-        localStorage.setItem('products', products);
+        localStorage.setItem('products', JSON.stringify(products));
     }
 
     getCategories(){
@@ -78,7 +81,7 @@ class DashboardPage extends Component {
         this.setState({
             categories: categories,
         });
-        localStorage.setItem('categories', categories);
+        localStorage.setItem('categories', JSON.stringify(categories));
     }
 
     render() {
@@ -94,7 +97,7 @@ class DashboardPage extends Component {
                         <Row style={{textAlign: "center"}}>
                             <Col xs="12" sm="6" style={{marginTop: "50px"}}>
                                 <h2>Total Category</h2>
-                                <h1>{this.state.categories.length}</h1>
+                                <h1>{this.state.categories != null ? this.state.categories.length: 0}</h1>
 
                                 <Link to="/category">
                                     <Button color="primary" onClick={this.handleSubmit}>View</Button>
@@ -102,7 +105,7 @@ class DashboardPage extends Component {
                             </Col>
                             <Col xs="12" sm="6" style={{marginTop: "50px"}}>
                                 <h2>Total Product</h2>
-                                <h1>{this.state.products.length}</h1>
+                                <h1>{this.state.products != null ? this.state.products.length: 0}</h1>
                                 <Link to="/product">
                                     <Button color="primary" onClick={this.handleSubmit}>View</Button>
                                 </Link>

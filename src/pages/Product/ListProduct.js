@@ -16,9 +16,9 @@ class ListProduct extends Component {
         this.CategoriesData = this.CategoriesData.bind(this);
 
         this.state = {
-            user: localStorage.getItem('user'),
-            products: [],
-            categories: []
+            user: JSON.parse(localStorage.getItem('user')),
+            products: JSON.parse(localStorage.getItem('products')),
+            categories: JSON.parse(localStorage.getItem('categories'))
         }
     }
 
@@ -26,13 +26,6 @@ class ListProduct extends Component {
         if (navigator.onLine){
             this.getCategories();
             this.getProducts();
-        }else{
-            let categories = localStorage.getItem('categories');
-            let products = localStorage.getItem('products');
-            this.setState({
-                categories: categories,
-                products: products
-            })
         }
         
     }
@@ -59,6 +52,7 @@ class ListProduct extends Component {
         this.setState({
             categories: categories,
         });
+        localStorage.setItem('categories', JSON.stringify(categories));
     }
 
     getProducts(){
@@ -92,6 +86,7 @@ class ListProduct extends Component {
         this.setState({
             products: products,
         });
+        this.localStorage.setItem('products', JSON.stringify(products));
     }
 
     deleteProducts(id){

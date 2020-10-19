@@ -14,22 +14,15 @@ class ListCategory extends Component {
         this.onDataChange = this.onDataChange.bind(this);
 
         this.state = {
-            user: localStorage.getItem('user'),
-            categories: [],
+            user: JSON.parse(localStorage.getItem('user')),
+            categories: JSON.parse(localStorage.getItem('categories')),
         }
     }
 
     componentDidMount(){
-        console.log("is online", navigator.onLine)
         if (navigator.onLine){
             this.getCategories();
-        }else{
-            let categories = localStorage.getItem('categories');
-            this.setState({
-                categories: categories
-            })
         }
-        
     }
 
     getCategories(){
@@ -54,6 +47,7 @@ class ListCategory extends Component {
         this.setState({
             categories: categories,
         });
+        localStorage.setItem('categories', JSON.stringify(categories));
     }
 
     deleteCategory(id){

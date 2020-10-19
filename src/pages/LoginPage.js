@@ -28,7 +28,7 @@ class LoginPage extends Component {
     handleSubmit(){
         auth.signInWithEmailAndPassword(this.state.email, this.state.password).then(res => {
             console.log("Sukses");
-            localStorage.setItem('user', res.user);
+            localStorage.setItem('user', JSON.stringify(res.user));
             this.setState({
                 isLoggedIn: true
             })
