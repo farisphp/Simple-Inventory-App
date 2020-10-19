@@ -8,7 +8,7 @@ import Navbar from '../../components/Navbar';
 import { Redirect } from "react-router-dom";
 import CategoryDataService from "../../services/CategoryService";
 
-class AddCategoryPage extends Component {
+class AddCategory extends Component {
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -70,4 +70,4 @@ class AddCategoryPage extends Component {
     }
 }
 
-export default AddCategoryPage;
+export default AddCategory;

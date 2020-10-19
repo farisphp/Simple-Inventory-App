@@ -8,7 +8,7 @@ import Navbar from '../../components/Navbar';
 import { Redirect, Link } from "react-router-dom";
 import CategoryDataService from "../../services/CategoryService";
 
-class AddCategoryPage extends Component {
+class ListCategory extends Component {
     constructor(props){
         super(props);
         this.onDataChange = this.onDataChange.bind(this);
@@ -68,7 +68,7 @@ class AddCategoryPage extends Component {
                 <div>
                     <Navbar />
                     <Container>
-                        <h2>List Category</h2>
+                        <h2>Category Lists</h2>
                         <Link to="/category/add">
                             <Button color="primary">Add Category</Button>{' '}
                         </Link>
@@ -76,7 +76,7 @@ class AddCategoryPage extends Component {
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Category Name</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -103,4 +103,4 @@ class AddCategoryPage extends Component {
     }
 }
 
-export default AddCategoryPage;
+export default ListCategory;
