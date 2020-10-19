@@ -6,11 +6,7 @@ class CategoryDataService {
     getAll() {
       return db;
     }
-
-    getById(id){
-      return db.doc(id).get();
-    }
-  
+    
     create(category) {
       return db.add(category);
     }

@@ -6,10 +6,6 @@ class ProductDataService {
     getAll() {
       return db;
     }
-
-    getById(id){
-      return db.doc(id).get();
-    }
   
     create(product) {
       return db.add(product);
